@@ -1,0 +1,31 @@
+{
+  "name": "gemstones",
+  "version": "1.0.0",
+  "description": "Semi-precious Gemstones Store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VenelinGP/Gemstones.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VenelinGP/Gemstones/issues"
+  },
+  "homepage": "https://github.com/VenelinGP/Gemstones#readme",
+  "dependencies": {
+    "body-parser": "^1.17.0",
+    "bower": "^1.8.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.0",
+    "express-session": "^1.15.1",
+    "mongoose": "^4.8.5",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}
