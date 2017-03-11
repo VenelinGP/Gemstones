@@ -7,7 +7,7 @@ const user = require('../models/User');
 mongoose.Promise = global.Promise;
 
 module.exports = (config) => {
-    mongoose.connect(config.db);
+    mongoose.connect(config.development.db);
 
     let db = mongoose.connection;
 
