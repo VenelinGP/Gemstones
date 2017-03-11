@@ -5,16 +5,17 @@ const express = require('express'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
     passport = require('passport');
+let config = require('./config');
 
 module.exports = (app, config) => {
     app.set("view engine", "pug");
-    app.set("views", `${config.path.rootPath}views`);
-    //app.set('views', config.rootPath + '/server/views');
+    //app.set("views", `${config.path.rootPath}views`);
+    app.set('views', config.rootPath + '/server/views');
 
     // here load other routs
     app.use(bodyParser.urlencoded({ extended: true, uploadDir: "../../public/images" }));
     app.use(bodyParser.json());
-    let secretKey = process.env["SECRET_KEY"] || config.development.secret;
+    let secretKey = process.env["SECRET_KEY"] || config;
     app.use(cookieParser(secretKey));
     app.use(session({
         secret: secretKey,

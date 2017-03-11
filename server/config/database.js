@@ -1,7 +1,7 @@
 "use strict";
 
 const mongoose = require("mongoose");
-//user = require('../models/User'),
+const user = require('../models/User');
 //course = require('../models/Course');
 
 mongoose.Promise = global.Promise;
@@ -25,6 +25,6 @@ module.exports = (config) => {
     });
 
 
-    //user.seedInitialUsers();
+    user.seedInitialUsers();
     //course.seedInitialCourses();
 };
