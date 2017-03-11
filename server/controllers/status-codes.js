@@ -1,5 +1,3 @@
-"use strict";
-
 module.exports = {
     OK: {
         code: 200,
