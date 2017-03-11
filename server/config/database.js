@@ -1,6 +1,8 @@
 "use strict";
 
 const mongoose = require("mongoose");
+//user = require('../models/User'),
+//course = require('../models/Course');
 
 mongoose.Promise = global.Promise;
 
@@ -11,13 +13,18 @@ module.exports = (config) => {
 
     db.once("open", err => {
         if (err) {
-            console.log(err);
+            console.log("Database could not be opened: " + err);
+            return;
         }
 
-        console.log("MongoDB ready!");
+        console.log("Database up and running...");
     });
 
     db.on("error", err => {
         console.log(`Database error: ${err}`);
     });
+
+
+    //user.seedInitialUsers();
+    //course.seedInitialCourses();
 };
