@@ -1,7 +1,9 @@
-const usersController = require("./user-controllers");
+const authController = require("./auth-controller"),
+    usersController = require("./users-controller");
 // var coursesController = require("../controllers/coursesController");
 
 module.exports = {
-    users: usersController,
+    authController,
+    usersController,
     //courses: coursesController
 };

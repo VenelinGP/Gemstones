@@ -23,6 +23,10 @@ header {
     font-weight: bolder;
 }
 
+h1 {
+    color: white;
+}
+
 #header a,
 #header input {
     display: inline-block;

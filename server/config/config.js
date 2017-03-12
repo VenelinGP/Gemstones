@@ -18,12 +18,12 @@ module.exports = {
         rootPath,
         db: process.env["MONGODB_URI"] || CONNECTION_URL,
         port: developmentPort,
-        secret: "secret_key"
+        secret: "purple unicorn"
     },
     production: {
         rootPath,
         db: process.env["MONGODB_URI"] || CONNECTION_URL,
         port: developmentPort,
-        secret: "secret_key"
+        secret: "purple unicorn"
     }
 };
