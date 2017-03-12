@@ -1,9 +1,9 @@
-const authController = require("./auth-controller"),
-    usersController = require("./users-controller");
 // var coursesController = require("../controllers/coursesController");
-
-module.exports = {
-    authController,
-    usersController,
-    //courses: coursesController
+module.exports = (data) => {
+    const auth = require("./auth-controller")(data),
+        users = require("./users-controller")(data);
+    return {
+        auth,
+        users
+    };
 };
