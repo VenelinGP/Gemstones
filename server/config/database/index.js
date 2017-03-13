@@ -3,6 +3,7 @@ const models = require("../../models");
 
 mongoose.Promise = global.Promise;
 module.exports = (config) => {
+    console.log("Database");
     mongoose.connect(config.development.db);
     let db = mongoose.connection;
 
@@ -19,5 +20,5 @@ module.exports = (config) => {
         console.log(`Database error: ${err}`);
     });
 
-    models.User.seedInitialUsers();
+    // models.User.seedInitialUsers();
 };
