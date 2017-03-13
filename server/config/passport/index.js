@@ -1,5 +1,5 @@
 const User = require('mongoose').model('User'),
-    data = require("../database/controllers"),
+    data = require("../database"),
     passport = require("passport");
 
 require("./local-strategy")(passport, data);

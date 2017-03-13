@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const models = require("../../models");
+// const models = require("../../models");
 
 mongoose.Promise = global.Promise;
 module.exports = (config) => {
