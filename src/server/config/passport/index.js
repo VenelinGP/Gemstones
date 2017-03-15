@@ -1,12 +1,10 @@
-const User = require('mongoose').model('User'),
-    data = require("../database"),
-    passport = require("passport");
+const User = require("mongoose").model("User");
+const passport = require("passport");
 
-require("./local-strategy")(passport, data);
+require("./local-strategy")(passport);
 
 passport.serializeUser((user, done) => {
     if (user) {
-        console.log(user);
         return done(null, user._id);
     }
 });

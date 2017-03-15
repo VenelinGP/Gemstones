@@ -2,7 +2,23 @@ let passport = require("passport");
 
 module.exports = (data) => {
     return {
-        login(req, res, next) {
+        getLogin(req, res) {
+            res.status(200).send(`
+                    <form action="/api/login" method="POST">
+                    <p>
+                        <input type="text" name="username" placeholder="Username">
+                    </p>
+                    <p>
+                        <input type="text" name="password" placeholder="Password">
+                    </p>
+                    <p>
+                        <input type="submit" value="Login">
+                    </p>
+                    </form>
+                `);
+        },
+        postLogin(req, res, next) {
+            // passport.authenticate("local", { failureRedirect: "/login" }
             const auth = passport.authenticate("local", (err, user) => {
                 if (err) {
                     return next(err);
@@ -22,28 +38,14 @@ module.exports = (data) => {
                     //     success: true,
                     //     user
                     // });
-                    res.redirect("./profile");
+                    res.redirect("/api/profile");
                 });
             });
             auth(req, res, next);
         },
         logout(req, res) {
             req.logout();
-            res.redirect("/home");
-            // res.end();
-        },
-        register(req, res) {
-            console.dir(req.body);
-            const user = {
-                username: req.body.username,
-                password: req.body.password
-            };
-
-            data.createUser(user)
-                .then(() => {
-                    res.status(201).send("<h1>Worked!</h1>")
-                })
-                .catch((error) => res.status(500).json(error));
+            res.status(200).redirect("/api/login");
         },
         isAuthenticated(req, res, next) {
             if (req.isAuthenticated()) {
@@ -60,6 +62,9 @@ module.exports = (data) => {
                 res.status(403);
                 res.end();
             };
-        }
+        },
+        unauthorized(req, res) {
+            res.send({ reason: "You are is unauthorized!" });
+        },
     };
 };

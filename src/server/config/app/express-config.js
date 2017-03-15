@@ -22,5 +22,6 @@ module.exports = (app, config) => {
 
     require("../passport")(app);
 
+    app.use("/libs", express.static(config.development.rootPath + "/node_modules"));
     app.use(express.static(config.development.rootPath + "/public"));
 };

@@ -23,10 +23,6 @@ header {
     font-weight: bolder;
 }
 
-h1 {
-    color: white;
-}
-
 #header a,
 #header input {
     display: inline-block;
@@ -69,4 +65,8 @@ body {
 
 .anonymous-enter:hover {
     color: #05F1FF;
+}
+
+h1 {
+    color: white;
 }

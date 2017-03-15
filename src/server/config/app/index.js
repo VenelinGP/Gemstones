@@ -3,7 +3,6 @@ const config = require("../config"),
 
 const app = express();
 
-// const dataControler = require("../../../arhiv/dataDb");
 const dataControler = require("../database");
 const pageController = require("../../controllers")(dataControler);
 

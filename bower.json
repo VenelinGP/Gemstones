@@ -1,20 +1,23 @@
 {
-  "name": "public",
-  "description": "",
-  "main": "index.js",
-  "authors": [
-    "venelingp <venelin.petkovb@netcoms.eu>"
-  ],
-  "license": "ISC",
-  "homepage": "",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "v4.0.0-alpha.6"
-  }
+    "name": "public",
+    "description": "",
+    "main": "index.js",
+    "authors": [
+        "venelingp <venelin.petkov@netcoms.eu>"
+    ],
+    "license": "ISC",
+    "homepage": "",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "v4.0.0-alpha.6",
+        "navigo": "^4.0.1",
+        "bluebird": "^3.5.0",
+        "handlebars": "^4.0.5"
+    }
 }
