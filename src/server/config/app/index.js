@@ -6,8 +6,9 @@ const app = express();
 const dataControler = require("../database");
 const pageController = require("../../controllers")(dataControler);
 
-require("../database")(config);
 require("./express-config")(app, config);
+require("../database")(config);
+require("../passport")(app);
 require("../routing/users-routing")(app, pageController);
 
 module.exports = app;

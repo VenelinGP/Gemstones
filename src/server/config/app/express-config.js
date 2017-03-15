@@ -3,10 +3,12 @@ const bodyParser = require("body-parser"),
     express = require("express"),
     session = require("express-session");
 module.exports = (app, config) => {
-    console.log("Express");
     // app.set("view engine", "pug");
     // app.set("views", `${config.path.rootPath}views`);
     // app.set("views", config.development.rootPath + "/server/views");
+
+    app.set("view engine", "pug");
+    app.set("views", "build/views");
 
     let secretKey = process.env["SECRET_KEY"] || config.development.secret;
 
@@ -20,7 +22,9 @@ module.exports = (app, config) => {
         saveUninitialized: true
     }));
 
-    require("../passport")(app);
+
+
+    app.get("/", (req, res) => res.render("index"));
 
     app.use("/libs", express.static(config.development.rootPath + "/node_modules"));
     app.use(express.static(config.development.rootPath + "/public"));

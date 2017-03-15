@@ -11,7 +11,7 @@ header {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#05f1ff', endColorstr='#28a0ff', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
-    color: #37003C;
+    color: #2A403F;
     font-family: 'Ravi Prakash', cursive;
     font-size: 20px;
 }
@@ -30,20 +30,20 @@ header {
 }
 
 #login-form-container a.btn {
-    background-color: #37003C;
+    background-color: #5D7574;
 }
 
 body {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#37003c+0,6b476d+88 */
-    background: #37003c;
+    background: #2A403F;
     /* Old browsers */
-    background: -moz-linear-gradient(-45deg, #37003c 0%, #6b476d 88%);
+    background: -moz-linear-gradient(-45deg, #2A403F 0%, #93A3A2 88%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg, #37003c 0%, #6b476d 88%);
+    background: -webkit-linear-gradient(-45deg, #2A403F 0%, #93A3A2 88%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, #37003c 0%, #6b476d 88%);
+    background: linear-gradient(135deg, #2A403F 0%, #93A3A2 88%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#37003c', endColorstr='#6b476d', GradientType=1);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#2A403F', endColorstr='#93A3A2', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
     background-attachment: fixed;
 }
@@ -55,7 +55,7 @@ body {
 
 #register-form-container a.btn {
     background-color: #05F1FF;
-    color: #37003C;
+    color: #2A403F;
 }
 
 .anonymous-enter {
@@ -67,6 +67,9 @@ body {
     color: #05F1FF;
 }
 
-h1 {
+h1,
+h2,
+h3,
+a {
     color: white;
 }
