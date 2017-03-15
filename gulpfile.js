@@ -39,7 +39,8 @@ gulp.task("copy:all", () => {
             "./src/**/*.html",
             "./src/**/*.js",
             "./src/**/*.pug",
-            "./src/**/*.css"
+            "./src/**/*.css",
+            "./src/**/*"
         ])
         .pipe(gulp.dest("./build"));
 });
