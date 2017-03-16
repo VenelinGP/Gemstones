@@ -1,18 +1,39 @@
-/* globals $ Navigo controllers */
+const url = "http://localhost:3000/api/all";
+const handlebars = window.handlebars || window.Handlebars;
 
-$(() => {
-    const loader = window.loader;
+(() => {
+    const root = null,
+        useHash = false;
 
-    window.baseUrl = "/api/";
-    const root = null;
-    const useHash = false;
-
-    loader.init();
-
-    let router = new Navigo(root, useHash);
-
-    // routing
+    let router = new Navigo(root);
+    console.log("Here 1");
     router
-        .on(controllers.home.initial)
+        .on(() => {
+            $.ajax({
+                url,
+                method: "GET",
+                contentType: "application/json",
+                success(resp) {
+                    const users = resp;
+
+                    templateHtml = `
+                        <ul>
+                            {{#each model}}
+                                <li>
+                                    {{username}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    `;
+                    const compileFunc = handlebars.compile(templateHtml);
+                    let html = compileFunc({ model: users });
+                    console.log(html);
+                    $("#page-placeholder").html(html);
+                },
+                error(err) {
+                    console.log(err);
+                }
+            });
+        })
         .resolve();
-});
+})();

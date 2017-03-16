@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Georgia';
+    src: url('/fonts/Georgia.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Goudy_Bookletter';
+    src: url('/fonts/goudy_bookletter_1911-webfont.ttf') format('truetype');
+}
+
 html,
 body,
 ul,
@@ -170,7 +180,8 @@ h3 {
 #nav {
     z-index: 1;
     /*  height beshe 6.4 rem*/
-    height: 4.5%;
+    /*height: 6.4 rem;*/
+    /*height: 4.5%;*/
     border: 1px solid rgba(255, 255, 255, 0.22);
     box-shadow: 0 0 4px rgba(0, 0, 0, 1);
     /* beshe 3rem*/
@@ -233,6 +244,7 @@ h3 {
 /*}*/
 
 #nav a {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
     font-size: 1.2rem;
     text-transform: uppercase;
     display: block;
@@ -610,4 +622,11 @@ h3 {
     100% {
         opacity: 0
     }
+}
+
+#page-placeholder {
+    height: 200px;
+    width: 200px;
+    background-color: purple;
+    font-size: 16px;
 }

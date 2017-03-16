@@ -89,13 +89,13 @@ module.exports = (data) => {
             }
         },
         getAllUsers(req, res) {
-            if (!req.isAuthenticated() || !(req.user.roles.indexOf("admin") > -1)) {
-                if (req.isAuthenticated()) {
-                    res.send({ reason: "You are not an admin!" });
-                } else {
-                    return res.status(401).redirect("/api/unauthorized");
-                }
-            }
+            // if (!req.isAuthenticated() || !(req.user.roles.indexOf("admin") > -1)) {
+            //     if (req.isAuthenticated()) {
+            //         res.send({ reason: "You are not an admin!" });
+            //     } else {
+            //         return res.status(401).redirect("/api/unauthorized");
+            //     }
+            // }
             User.find({}).exec((err, collection) => {
                 if (err) {
                     console.log("Users could not be loaded: " + err);

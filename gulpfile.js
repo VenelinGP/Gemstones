@@ -18,7 +18,11 @@ gulp.task("clean", function() {
 });
 
 gulp.task("compile:js", () => {
-    return gulp.src(["./src/public/**/*.js", "!./src/public/bower*/", "!./src/public/bower*/**/*"])
+    return gulp.src([
+            "./src/public/**/*.js",
+            "!./src/public/bower*/",
+            "!./src/public/bower*/**/*"
+        ])
         .pipe(babel({
             presets: ["es2015"],
         }))
@@ -52,7 +56,7 @@ gulp.task("build", gulpsync.sync(["clean", "compile", "copy"]));
 gulp.task("serve", ["build"], () => {
     nodemon({
         script: "./build/server.js",
-        ext: "js html pug css styl",
+        ext: "js html hbs css styl",
         ignore: ["build"],
         tasks: ["build"],
     });

@@ -2,13 +2,15 @@ const bodyParser = require("body-parser"),
     cookieParser = require("cookie-parser"),
     express = require("express"),
     session = require("express-session");
+const exphbs = require("express-handlebars");
 module.exports = (app, config) => {
-    // app.set("view engine", "pug");
-    // app.set("views", `${config.path.rootPath}views`);
-    // app.set("views", config.development.rootPath + "/server/views");
 
-    app.set("view engine", "pug");
-    app.set("views", "build/views");
+    app.engine(".hbs", exphbs({ extname: ".hbs" }));
+    app.set("view engine", ".hbs");
+
+    // app.engine("handlebars", exphbs({ defaultLayouts: "main" }));
+    // app.set("view engine", "handlebars");
+    app.set("views", "build/views/");
 
     let secretKey = process.env["SECRET_KEY"] || config.development.secret;
 
@@ -24,7 +26,8 @@ module.exports = (app, config) => {
 
 
 
-    app.get("/", (req, res) => res.render("index"));
+    // app.get("/", (req, res) => res.render("index"));
+    app.get("/", (req, res) => res.render("index", { layout: false }));
 
     app.use("/libs", express.static(config.development.rootPath + "/node_modules"));
     app.use(express.static(config.development.rootPath + "/public"));
