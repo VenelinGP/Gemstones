@@ -10,17 +10,17 @@ const handlebars = window.handlebars || window.Handlebars;
                     return templateFunc;
                 });
         },
-        // get(name) {
-        //     const url = `/public/templates/${name}.html`;
-        //     return this.getByUrl(url);
-        // },
+        get(name) {
+            const url = `/public/templates/${name}.hbs`;
+            return this.getByUrl(url);
+        },
 
-        // getModal(type) {
-        //     const url = `/public/modals/${type}.html`;
-        //     return this.getByUrl(url);
-        // },
+        getModal(type) {
+            const url = `/public/modals/${type}.hbs`;
+            return this.getByUrl(url);
+        },
         getPage(name) {
-            const url = `/pages/${name}/${name}.html`;
+            const url = `/pages/${name}/${name}.hbs`;
             return this.getByUrl(url);
         }
     };

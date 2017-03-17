@@ -1,0 +1,21 @@
+{{#if res}}
+<a href="#/logout">{{res.username}}</a>
+<ul>
+    <li>
+        <a href="#/logout">logout</a>
+    </li>
+</ul>
+{{else}}
+   <a href="#/signup">Sing up</a>
+    <ul>
+        <li>
+            <a href="#/acount/register">register</a>
+        </li>
+        <li>
+            <a href="#/login">login</a>
+        </li>
+        <li>
+            <strong>{{res.result}}</strong>
+        </li>
+    </ul>
+{{/if}}

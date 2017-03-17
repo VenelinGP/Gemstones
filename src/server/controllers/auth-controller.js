@@ -34,11 +34,7 @@ module.exports = (data) => {
                     if (err) {
                         return next(err);
                     }
-                    // res.send({
-                    //     success: true,
-                    //     user
-                    // });
-                    res.redirect("/api/profile");
+                    res.redirect("/api/home");
                 });
             });
             auth(req, res, next);
@@ -64,7 +60,7 @@ module.exports = (data) => {
             };
         },
         unauthorized(req, res) {
-            res.send({ reason: "You are is unauthorized!" });
+            res.send({ result: "unauthorized!" });
         },
     };
 };

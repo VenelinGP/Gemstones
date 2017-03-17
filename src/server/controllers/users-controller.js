@@ -10,7 +10,12 @@ module.exports = (data) => {
             if (!req.user) {
                 return res.status(200).send({ error: "You are not logged!" });
             }
-            return res.status(200).send({ success: `${req.user.username}` });
+            return res.status(200).send({
+                result: {
+                    username: `${req.user.username}`,
+                    role: `${req.user.roles}`
+                }
+            });
         },
         profile(req, res) {
             if (!req.isAuthenticated()) {
@@ -98,7 +103,10 @@ module.exports = (data) => {
             // }
             User.find({}).exec((err, collection) => {
                 if (err) {
-                    console.log("Users could not be loaded: " + err);
+                    return res.send({
+                        error: "Username is already taken"
+                    });
+                    // console.log("Users could not be loaded: " + err);
                 }
                 return res.send(collection);
             });

@@ -38,18 +38,8 @@
                             <li>
                                 <a href="#/home" title="home" ng-click="collapsed = collapsed">Home</a>
                             </li>
-                            <li ng-if="vm.curentLogUser">
-                                <a href="#" ng-click="collapsed =!collapsed">
-                                    {{!--{{vm.curentLogUser.get('username')}}--}}
-                                    <ul>
-                                        <li>
-                                            <a ng-click="vm.logOut(currentUser)">Log Out</a>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </li>
                             <li>
-                                <a href="#/menu" ng-click="collapsed =!collapsed">Menu
+                                <a href="#/menu" ng-click="collapsed =!collapsed">Menu</a>
                                     <ul>
                                         <li>
                                             <a href="menu/alcohol" ng-click="collapsed =!collapsed">Alcohol Drinks</a>
@@ -67,44 +57,24 @@
                                             <a href="#" ng-click="collapsed = collapsed">Deserts</a>
                                         </li>
                                     </ul>
-                                </a>
+                                
                             </li>
                             <li>
                                 <a href="#/galery" ng-click="collapsed =!collapsed">Galery</a>
                             </li>
                             <li>
-                                <a href="#/blog" ng-click="collapsed =!collapsed">Blog</a>
-                                <ul ng-if="!vm.currentLogUser">
-                                    <li>
-                                        <a href="#/add/post">Add Post</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
                                 <a href="#/about" ng-click="collapsed =!collapsed">About</a>
                             </li>
-                            <li class="invisible">
-                                <a href="#" ng-click="collapsed =!collapsed" >Sing up
-                                    <ul>
-                                        <li>
-                                            <a href="#/acount/register" ng-click="collapsed =!collapsed">Register</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/login" ng-click="collapsed =!collapsed">login</a>
-                                        </li>
-                                    </ul>
-
-                                </a>
-                            </li>
+                            <li id="login-placeholder"></li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <div class="text-wrap">
+            {{!--<div class="text-wrap">
                 <div id="head-title" ng-controller="HomeController as vm">
                     <h1 class="title">
                         bar BETY'S
-                        {{!--{{vm.home}}--}}
+                        {{vm.home}}
                     </h1>
                     <p>
                         Welcome <br/>
@@ -114,15 +84,20 @@
                     </p>
                     <button class="btn">Reservation here</button>
                 </div>
-            </div>
+            </div>--}}
         </div>
     </header>
-    <div id="page-placeholder"></div>
+    
 </div>
 
     {{!-- SCRIPTS --}}
+
+    {{!--utils--}}
     <script src="/js/utils/http.js"></script>
     <script src="/js/utils/templates.js"></script>
+
+    {{!--controllers--}}
+    <script src="/pages/home/home.js"></script>
     <script src="/app.js"></script>
 </body>
 

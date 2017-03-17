@@ -47,6 +47,7 @@ img {
 
 a {
     text-decoration: none;
+    white-space: nowrap;
 }
 
 h3 {
@@ -210,6 +211,7 @@ h3 {
 #nav li {
     margin: 0 0.5rem;
     position: relative;
+    width: 350%;
 }
 
 #nav li ul {
@@ -253,7 +255,9 @@ h3 {
 }
 
 #nav a:hover {
-    color: #c0b898;
+    font-style: italic;
+    color: #EEE4BA;
+    text-decoration: none;
 }
 
 #nav .current-item a {
@@ -625,8 +629,5 @@ h3 {
 }
 
 #page-placeholder {
-    height: 200px;
-    width: 200px;
-    background-color: purple;
     font-size: 16px;
 }
