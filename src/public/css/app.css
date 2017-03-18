@@ -596,13 +596,13 @@
         clear: both;
     }
     
-    .login-head {
+    .modal-header {
         padding: 2em 0;
         background: #452917;
         position: relative;
     }
     
-    .login-head h1 {
+    .modal-header h1 {
         color: #fff;
         font-family: "Goudy_Bookletter", sans-serif;
         font-size: 4.5em;
@@ -715,7 +715,7 @@
     }
     /*----*/
     
-    .alert-close {
+    .modal-close {
         background: url('../img/into.png') no-repeat 0px 3px;
         cursor: pointer;
         height: 30px;
@@ -809,10 +809,10 @@
             margin: 8% auto 0;
             width: 90%;
         }
-        .login-head {
+        .modal-header {
             padding: 1.45em 0;
         }
-        .login-head h1 {
+        .modal-header h1 {
             font-size: 1.15em;
         }
         .icon {
@@ -822,7 +822,7 @@
         input[type="password"] {
             font-size: 16px;
         }
-        .alert-close {
+        .modal-close {
             right: 12px;
             top: 22px;
         }

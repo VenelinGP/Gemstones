@@ -3,7 +3,7 @@ const gulpsync = require("gulp-sync")(gulp);
 
 const babel = require("gulp-babel");
 
-const stylus = require("gulp-stylus");
+// const stylus = require("gulp-stylus");
 
 const nodemon = require("gulp-nodemon");
 
@@ -18,7 +18,8 @@ gulp.task("clean", function() {
 });
 
 gulp.task("compile:js", () => {
-    return gulp.src([
+    return gulp
+        .src([
             "./src/public/**/*.js",
             "!./src/public/bower*/",
             "!./src/public/bower*/**/*"
@@ -29,13 +30,15 @@ gulp.task("compile:js", () => {
         .pipe(gulp.dest("./build/public"));
 });
 
-gulp.task("compile:stylus", () => {
-    return gulp.src("./src/**/*.styl")
-        .pipe(stylus())
-        .pipe(gulp.dest("./build"));
-});
+// gulp.task("compile:stylus", () => {
+//     return gulp.src("./src/**/*.styl")
+//         .pipe(stylus())
+//         .pipe(gulp.dest("./build"));
+// });
 
-gulp.task("compile", ["compile:js", "compile:stylus"]);
+// , "compile:stylus"
+
+gulp.task("compile", ["compile:js"]);
 
 gulp.task("copy:all", () => {
     return gulp
