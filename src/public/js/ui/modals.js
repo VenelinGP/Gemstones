@@ -12,7 +12,6 @@
                             ${templateFunc(this.type)}
                         </div>
                     `;
-                    console.log(this.modalHtml);
                 });
         }
 
@@ -25,14 +24,13 @@
 
         hide() {
             $(`#${this.id} .modal`).modal("hide");
-            $(`#${this.id}`).remove();
+            // $(`#${this.id}`).remove();
             return Promise.resolve(this);
         }
     }
 
     scope.modals = {
         get(modal) {
-            console.log(modal);
             return new Modal(modal);
         }
     };

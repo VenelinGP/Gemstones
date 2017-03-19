@@ -1,30 +1,30 @@
-<div class="modal fade modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalRegister">
+<div class="modal fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalRegister">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h1>Register</h1>
                 <div class="modal-close" data-dismiss="modal"> </div> 
             </div>
-            <form id="form-login" class="form">
+            <form id="form-register" class="form">
                 <div class="modal-body">
                     <ul>
                         <li>
-                            <input type="text" class="text" value="First name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First name';}">
+                            <input type="text" id="tb-firstname" class="text" value="First name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First name';}">
                             <a href="#" class=" icon user"></a>
                         </li>
                             <div class="clear"> </div>
                         <li>
-                            <input type="text" class="text" value="Last name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last name';}">
+                            <input type="text" id="tb-lastname" class="text" value="Last name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last name';}">
                             <a href="#" class=" icon user"></a>
                         </li>
                             <div class="clear"> </div>
                         <li>
-                            <input type="text" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}">
+                            <input type="text" id="tb-username" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}">
                             <a href="#" class=" icon user"></a>
                         </li>
                             <div class="clear"> </div>
                         <li>
-                            <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"> 
+                            <input type="password" id="tb-password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"> 
                             <a href="#" class="icon lock"></a>
                         </li>
                     </ul>

@@ -8,7 +8,7 @@ module.exports = (data) => {
                 return res.status(401).redirect("/api/unauthorized");
             }
             if (!req.user) {
-                return res.status(200).send({ error: "You are not logged!" });
+                return res.status(200).send({ result: "You are not logged!" });
             }
             return res.status(200).send({
                 result: {
@@ -22,7 +22,7 @@ module.exports = (data) => {
                 return res.status(401).redirect("/api/unauthorized");
             }
             const user = req.user;
-            return res.status(200).send({ success: `${user.username}` });
+            return res.status(200).send({ result: `${user.username}` });
 
         },
         getRegister(req, res) {
@@ -60,13 +60,20 @@ module.exports = (data) => {
         },
         createUser(req, res) {
             let newUserData = req.body;
+            console.log(newUserData);
             newUserData.salt = encryption.generateSalt();
             newUserData.hashPass = encryption.generateHashedPassword(newUserData.salt, newUserData.password);
             newUserData.roles = ["standard"];
+            console.log(newUserData);
             User.create(newUserData, (err, user) => {
                 if (err) {
                     console.log("Failed to register new user: " + err);
-                    return res.send({ reason: `Duplicate username: ${newUserData.username}` });
+                    return res.send({
+                        result: {
+                            success: false,
+                            error: `Duplicate username: ${newUserData.username}`
+                        }
+                    });
                 }
 
                 req.logIn(user, (err) => {
@@ -74,7 +81,15 @@ module.exports = (data) => {
                         res.status(400);
                         return res.send({ reason: err.toString() });
                     }
-                    res.redirect("/api/login");
+                    return res.status(200).json({
+                        result: {
+                            success: true,
+                            firstName: user.firstName,
+                            lastName: user.lastName,
+                            username: user.username,
+                            role: user.roles[0]
+                        }
+                    });
                 });
             });
         },
@@ -94,13 +109,13 @@ module.exports = (data) => {
             }
         },
         getAllUsers(req, res) {
-            // if (!req.isAuthenticated() || !(req.user.roles.indexOf("admin") > -1)) {
-            //     if (req.isAuthenticated()) {
-            //         res.send({ reason: "You are not an admin!" });
-            //     } else {
-            //         return res.status(401).redirect("/api/unauthorized");
-            //     }
-            // }
+            if (!req.isAuthenticated() || !(req.user.roles.indexOf("admin") > -1)) {
+                if (req.isAuthenticated()) {
+                    res.send({ reason: "You are not an admin!" });
+                } else {
+                    return res.status(401).redirect("/api/unauthorized");
+                }
+            }
             User.find({}).exec((err, collection) => {
                 if (err) {
                     return res.send({

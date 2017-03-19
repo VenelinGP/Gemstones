@@ -1,11 +1,11 @@
     @font-face {
         font-family: 'Georgia';
-        src: url('/fonts/Georgia.ttf') format('truetype');
+        src: url('../fonts/Georgia.ttf') format('truetype');
     }
     
     @font-face {
         font-family: 'Goudy_Bookletter';
-        src: url('/fonts/goudy_bookletter_1911-webfont.ttf') format('truetype');
+        src: url('../fonts/goudy_bookletter_1911-webfont.ttf') format('truetype');
     }
     
     html,
@@ -61,7 +61,8 @@
     }
     
     .form {
-        padding: 10%;
+        /*padding: 10%;*/
+        padding: 10% 10%;
         font-size: 1.8rem;
     }
     
@@ -200,6 +201,7 @@
         /*margin-left: 320px;*/
         padding-top: 2.5rem;
         float: right;
+        display: flex;
     }
     
     #nav li {
@@ -213,7 +215,7 @@
         position: absolute;
         background-color: #958e7d;
         border-bottom: 1px solid rgba(255, 255, 255, 0.22);
-        width: 367%;
+        /*width: 367%;*/
         /*height: 500%;*/
     }
     /*#nav li ul li a{*/
@@ -235,6 +237,14 @@
         text-shadow: 0px 0px 2px rgba(0, 0, 0, .57);
         color: #ffffff;
     }
+    /*.nav>li>a {
+        padding: 10px 5px;
+    }
+    
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+        background-color: transparent;
+    }*/
     
     #nav a:hover,
     #nav a:focus {
@@ -593,10 +603,6 @@
         }
     }
     
-    #page-placeholder {
-        font-size: 16px;
-    }
-    
     .clear {
         clear: both;
     }
@@ -609,7 +615,7 @@
     
     .modal-header h1 {
         color: #fff;
-        font-family: "Goudy_Bookletter", sans-serif;
+        font-family: "Georgia", sans-serif;
         font-size: 4.5em;
         text-align: left;
         margin: 0 23px;
@@ -645,7 +651,7 @@
     }
     
     .lock {
-        background: url(../img/icons.png) no-repeat -22px 1px;
+        background: url(../img/icons.png) no-repeat -26px 1px;
     }
     
     input:-webkit-autofill {
@@ -675,8 +681,8 @@
         color: #999;
         font-weight: 400;
         font-family: "Georgia", sans-serif;
-        margin-top: 8px;
         margin-left: 21px;
+        margin-top: 8px;
     }
     
     .submit h4 a:hover {
@@ -692,10 +698,10 @@
         float: left;
         color: #fff;
         cursor: pointer;
-        font-weight: 900;
+        font-weight: 700;
         outline: none;
         font-family: "Georgia", sans-serif;
-        /*padding: 12px 0px;*/
+        padding: 0 0;
         width: 35%;
         font-size: 18px;
         background: #452917;

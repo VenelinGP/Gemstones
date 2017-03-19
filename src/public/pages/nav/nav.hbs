@@ -14,40 +14,40 @@
             <nav id="nav" class="effect">
                 <div class="nav-color">
                     <div class="nav-opacity">
-                        <a id="logo" href="#/home" ng-click="collapsed = collapsed">
+                        <a id="logo" href="#/">
                             <img src="public/img/Logo.png">
                         </a>
                         <ul class="nav">
                             <li>
-                                <a href="#/home" title="home" ng-click="collapsed = collapsed">Home</a>
+                                <a href="#/" title="home">Home</a>
                             </li>
                             <li>
-                                <a href="#/menu" ng-click="collapsed =!collapsed">Menu</a>
+                                <a href="#/menu">Menu</a>
                                     <ul>
                                         <li>
-                                            <a href="menu/alcohol" ng-click="collapsed =!collapsed">Home</a>
+                                            <a href="menu/alcohol">Home</a>
                                         </li>
                                         <li>
-                                            <a href="#" ng-click="collapsed = collapsed">Galery</a>
+                                            <a href="#">Galery</a>
                                         </li>
                                         <li>
-                                            <a href="#" ng-click="collapsed = collapsed">About</a>
+                                            <a href="#">About</a>
                                         </li>
                                     </ul>
 
                             </li>
                             <li>
-                                <a href="#/galery" ng-click="collapsed =!collapsed">Galery</a>
+                                <a href="#/galery">Galery</a>
                             </li>
                             <li>
-                                <a href="#/about" ng-click="collapsed =!collapsed">About</a>
+                                <a href="#/about">About</a>
                             </li>
                             <li>
                             {{#if res}}
                             <a href="#/logout">{{res.username}}</a>
                             <ul>
                                 <li>
-                                    <a href="#/logout">logout</a>
+                                    <a href="/api/logout">logout</a>
                                 </li>
                             </ul>
                             {{else}}
@@ -68,7 +68,7 @@
             {{#if res}}
             {{else}}
                 <div class="text-wrap">
-                    <div id="head-title" ng-controller="HomeController as vm">
+                    <div id="head-title">
                         <h1 class="title">
                             Selena Gemstone Store
                         </h1>
