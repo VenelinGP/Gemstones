@@ -1,0 +1,89 @@
+<header id="header">
+        <div>
+            {{#if res}}
+            {{else}}
+                <div class="text-wrap">
+                    <div class="crossfade">
+                        <figure></figure>
+                        <figure></figure>
+                        <figure></figure>
+                        <figure></figure>
+                    </div>
+                </div>
+            {{/if}}
+            <nav id="nav" class="effect">
+                <div class="nav-color">
+                    <div class="nav-opacity">
+                        <a id="logo" href="#/home" ng-click="collapsed = collapsed">
+                            <img src="public/img/Logo.png">
+                        </a>
+                        <ul class="nav">
+                            <li>
+                                <a href="#/home" title="home" ng-click="collapsed = collapsed">Home</a>
+                            </li>
+                            <li>
+                                <a href="#/menu" ng-click="collapsed =!collapsed">Menu</a>
+                                    <ul>
+                                        <li>
+                                            <a href="menu/alcohol" ng-click="collapsed =!collapsed">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" ng-click="collapsed = collapsed">Galery</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" ng-click="collapsed = collapsed">About</a>
+                                        </li>
+                                    </ul>
+
+                            </li>
+                            <li>
+                                <a href="#/galery" ng-click="collapsed =!collapsed">Galery</a>
+                            </li>
+                            <li>
+                                <a href="#/about" ng-click="collapsed =!collapsed">About</a>
+                            </li>
+                            <li>
+                            {{#if res}}
+                            <a href="#/logout">{{res.username}}</a>
+                            <ul>
+                                <li>
+                                    <a href="#/logout">logout</a>
+                                </li>
+                            </ul>
+                            {{else}}
+                            <a href="#/signup">Sing up</a>
+                            <ul>
+                                <li>
+                                    <a id="btn-login-modal" href="#" data-toggle="modal" data-target=".modal-login">login</a>
+                                </li>
+                                <li>
+                                    <a id="btn-register-modal" href="#" data-toggle="modal" data-target=".modal-register">register</a>
+                                </li>
+                            </ul>
+                            {{/if}}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            {{#if res}}
+            {{else}}
+                <div class="text-wrap">
+                    <div id="head-title" ng-controller="HomeController as vm">
+                        <h1 class="title">
+                            Selena Gemstone Store
+                        </h1>
+                        <p>
+                            Welcome <br/>
+                            Work time <br/>
+                            08:00 - 22:00 <br/>
+                            every day <br/>
+                        </p>
+                        <button class="btn">Reservation here</button>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </header>
+
+
+

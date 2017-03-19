@@ -30,5 +30,5 @@ module.exports = (app, config) => {
     app.get("/", (req, res) => res.render("index", { layout: false }));
 
     app.use("/libs", express.static(config.development.rootPath + "/node_modules"));
-    app.use(express.static(config.development.rootPath + "/public"));
+    app.use("/public", express.static(config.development.rootPath + "/public"));
 };

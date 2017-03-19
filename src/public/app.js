@@ -1,10 +1,16 @@
 $(() => {
+    // const loader = window.loader;
+
     window.baseUrl = "/api/";
-    const root = null,
-        useHash = false;
+    const root = null;
+    const useHash = false;
+
+    // loader.init();
 
     let router = new Navigo(root, useHash);
+
+    // routing
     router
-        .on(controllers.home.initial)
+        .on(controllers.nav.initial)
         .resolve();
 });

@@ -34,14 +34,15 @@ module.exports = (data) => {
                     if (err) {
                         return next(err);
                     }
-                    res.redirect("/api/home");
+                    res.redirect("/");
                 });
             });
             auth(req, res, next);
         },
         logout(req, res) {
             req.logout();
-            res.status(200).redirect("/api/login");
+            res.status(200)
+                .redirect("/");
         },
         isAuthenticated(req, res, next) {
             if (req.isAuthenticated()) {

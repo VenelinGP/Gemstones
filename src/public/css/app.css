@@ -236,9 +236,14 @@
         color: #ffffff;
     }
     
-    #nav a:hover {
+    #nav a:hover,
+    #nav a:focus {
         font-style: italic;
         color: #EEE4BA;
+        text-decoration: none;
+    }
+    
+    #nav a:visited {
         text-decoration: none;
     }
     

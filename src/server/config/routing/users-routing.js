@@ -10,7 +10,7 @@ module.exports = (app, pageController) => {
         .get("/register", pageController.users.getRegister)
         .post("/register", pageController.users.createUser)
         .get("/profile", pageController.users.profile)
-        .get("/home", pageController.users.home)
+        .get("/users", pageController.users.home)
         .get("/all", pageController.users.getAllUsers);
 
     app.use("/api", router);

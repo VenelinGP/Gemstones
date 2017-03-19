@@ -20,7 +20,7 @@ const handlebars = window.handlebars || window.Handlebars;
             return this.getByUrl(url);
         },
         getPage(name) {
-            const url = `/pages/${name}/${name}.hbs`;
+            const url = `/public/pages/${name}/${name}.hbs`;
             return this.getByUrl(url);
         }
     };
