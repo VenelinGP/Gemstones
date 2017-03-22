@@ -3,18 +3,22 @@ let User = require("../models/").User;
 
 module.exports = (data) => {
     return {
-        home(req, res) {
+        getUsers(req, res) {
             if (!req.isAuthenticated()) {
                 return res.status(401).redirect("/api/unauthorized");
             }
             if (!req.user) {
                 return res.status(200).send({ result: "You are not logged!" });
             }
-            return res.status(200).send({
-                result: {
-                    username: `${req.user.username}`,
-                    role: `${req.user.roles}`
-                }
+            return res.send({
+                result: collection
+                    .map((user) => {
+                        return {
+                            id: user._id,
+                            username: user.username,
+                            role: user.roles[0]
+                        };
+                    })
             });
         },
         profile(req, res) {
@@ -22,7 +26,14 @@ module.exports = (data) => {
                 return res.status(401).redirect("/api/unauthorized");
             }
             const user = req.user;
-            return res.status(200).send({ result: `${user.username}` });
+            return res.status(200)
+                .send({
+                    result: {
+                        id: `${user._id}`,
+                        username: `${user.username}`,
+                        role: `${user.role[0]}`
+                    }
+                });
 
         },
         getRegister(req, res) {
@@ -109,22 +120,21 @@ module.exports = (data) => {
             }
         },
         getAllUsers(req, res) {
-            if (!req.isAuthenticated() || !(req.user.roles.indexOf("admin") > -1)) {
-                if (req.isAuthenticated()) {
-                    res.send({ reason: "You are not an admin!" });
-                } else {
-                    return res.status(401).redirect("/api/unauthorized");
-                }
-            }
-            User.find({}).exec((err, collection) => {
-                if (err) {
-                    return res.send({
-                        error: "Username is already taken"
-                    });
-                    // console.log("Users could not be loaded: " + err);
-                }
-                return res.send(collection);
-            });
+            // if (!req.isAuthenticated() || !(req.user.roles.indexOf("admin") > -1)) {
+            //     if (req.isAuthenticated()) {
+            //         res.send({ reason: "You are not an admin!" });
+            //     } else {
+            //         return res.status(401).redirect("/api/unauthorized");
+            //     }
+            // }
+            // User.find({}).exec((err, collection) => {
+            //     if (err) {
+            //         return res.send({
+            //             error: "Username is already taken"
+            //         });
+            //         // console.log("Users could not be loaded: " + err);
+            //     }
+            return res.send({ collection });
         }
     };
 };

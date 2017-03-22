@@ -3,15 +3,14 @@ const router = require("express").Router();
 module.exports = (app, pageController) => {
     console.log("Routing");
     router
-        .get("/login", pageController.auth.getLogin)
+        .get("/users", pageController.users.getUsers)
         .post("/login", pageController.auth.postLogin)
-        .get("/logout", pageController.auth.logout)
-        .get("/unauthorized", pageController.auth.unauthorized)
-        .get("/register", pageController.users.getRegister)
         .post("/register", pageController.users.createUser)
         .get("/profile", pageController.users.profile)
-        .get("/users", pageController.users.home)
-        .get("/all", pageController.users.getAllUsers);
-
+        .get("/all", pageController.users.getAllUsers)
+        .get("/logout", pageController.auth.logout)
+        .get("/login", pageController.auth.getLogin)
+        .get("/register", pageController.users.getRegister)
+        .get("/unauthorized", pageController.auth.unauthorized);
     app.use("/api", router);
 };

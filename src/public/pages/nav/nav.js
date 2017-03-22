@@ -1,5 +1,6 @@
 /* globals $ */
 const modals = window.modals;
+const footer = window.footer;
 const notifier = window.notifier;
 
 ((scope) => {
@@ -97,10 +98,10 @@ const notifier = window.notifier;
 
     const initial = () => {
         const url = window.baseUrl + "users";
-        console.log(url);
         Promise
             .all([http.get(url), templates.getPage("nav")])
             .then(([resp, templateFunc]) => {
+
                 if (resp.result === "unauthorized!") {
                     res = false;
                 } else {
@@ -109,7 +110,7 @@ const notifier = window.notifier;
                 let html = templateFunc({ res });
                 $("#nav-wrap").html(html);
 
-                $("#btn-login-modal").on("click", () => {
+                $(".btn-login-modal").on("click", () => {
                     modalLogin.show()
                         .then(() => {
                             helperFuncs.loginFormEvents();
@@ -121,8 +122,8 @@ const notifier = window.notifier;
                             helperFuncs.registerFormEvents();
                         });
                 });
-            });
-
+            })
+            .then(footer.init());
         Handlebars.registerHelper("ifEq", (v1, v2, options) => {
             if (v1 === v2) {
                 return options.fn(this);
@@ -132,6 +133,5 @@ const notifier = window.notifier;
     };
     scope.nav = {
         initial
-
     };
 })(window.controllers = window.controllers || {});

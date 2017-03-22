@@ -40,7 +40,6 @@ jspm_packages
 /build
 /node_modules
 /src/public/bower_components
-/src/public/img
 /build/node_modules
 /build/arhiv
 /build/public/bower_components
