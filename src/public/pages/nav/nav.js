@@ -1,5 +1,6 @@
 /* globals $ */
 const modals = window.modals;
+const notifier = window.notifier;
 
 ((scope) => {
     const modalLogin = modals.get("login");
@@ -20,8 +21,10 @@ const modals = window.modals;
                             res
                         });
                         $("#nav-wrap").html(html);
+                        notifier.success(`Welcome ${userToLogin.username}!`);
                     } else {
                         res = resp.result.success;
+                        notifier.error("Wrong username or password!");
                     }
                     // loader.hide();
                     modalLogin.hide();
@@ -29,7 +32,7 @@ const modals = window.modals;
                 .catch((err) => {
                     // loader.hide();
                     // console.log(`${userToLogin.username} not created! ${err}`);
-                    // notifier.error(`${userToLogin.username} not created! ${err}`);
+                    notifier.error(`${userToLogin.username} not created! ${err}`);
                     console.log(JSON.stringify(err)); // eslint-disable-line no-console
                 });
         },
@@ -57,11 +60,10 @@ const modals = window.modals;
                 .catch((err) => {
                     // loader.hide();
                     // console.log(`${userToLogin.username} not created! ${err}`);
-                    // notifier.error(`${userToLogin.username} not created! ${err}`);
+                    notifier.error(`${userToLogin.username} not created! ${err}`);
                     console.log(JSON.stringify(err)); // eslint-disable-line no-console
                 });
         },
-
         loginFormEvents() {
             const $form = $("#form-login");
             $form.on("submit", function() {
@@ -95,7 +97,9 @@ const modals = window.modals;
 
     const initial = () => {
         const url = window.baseUrl + "users";
-        Promise.all([http.get(url), templates.getPage("nav")])
+        console.log(url);
+        Promise
+            .all([http.get(url), templates.getPage("nav")])
             .then(([resp, templateFunc]) => {
                 if (resp.result === "unauthorized!") {
                     res = false;
@@ -119,8 +123,15 @@ const modals = window.modals;
                 });
             });
 
+        Handlebars.registerHelper("ifEq", (v1, v2, options) => {
+            if (v1 === v2) {
+                return options.fn(this);
+            }
+            return options.inverse(this);
+        });
     };
     scope.nav = {
         initial
+
     };
 })(window.controllers = window.controllers || {});

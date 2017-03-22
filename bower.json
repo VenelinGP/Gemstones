@@ -18,6 +18,7 @@
     "navigo": "^4.0.1",
     "bluebird": "^3.5.0",
     "handlebars": "^4.0.5",
-    "bootstrap": "v4.0.0-alpha.6"
+    "bootstrap": "v4.0.0-alpha.6",
+    "toastr": "^2.1.3"
   }
 }

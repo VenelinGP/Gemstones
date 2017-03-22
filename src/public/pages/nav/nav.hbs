@@ -13,11 +13,28 @@
             {{/if}}
             <nav id="nav" class="effect">
                 <div class="nav-color">
-                    <div class="nav-opacity">
-                        <a id="logo" href="#/">
+                    <div class="container nav-opacity">
+                        <div class="row">
+                        <a id="logo" class="col" href="#/">
                             <img src="public/img/Logo.png">
                         </a>
-                        <ul class="nav">
+                        {{#ifEq res.role "admin"}}
+                        <ul class="nav col-12 col-md-auto justify-content-end">
+                            <li>
+                                <a href="#/products" title="home">Products</a>
+                            </li>
+                            <li>
+                                <a href="#/users">Users</a>
+                            </li>
+                            <li>
+                                <a href="#/new">New</a>
+                            </li>
+                            <li>
+                                <a href="#/history">History</a>
+                            </li>
+                        </ul>
+                        {{else}}
+                        <ul class="nav col-12 col-md-auto justify-content-end">
                             <li>
                                 <a href="#/" title="home">Home</a>
                             </li>
@@ -25,16 +42,15 @@
                                 <a href="#/menu">Menu</a>
                                     <ul>
                                         <li>
-                                            <a href="menu/alcohol">Home</a>
+                                            <a href="#/">Home</a>
                                         </li>
                                         <li>
-                                            <a href="#">Galery</a>
+                                            <a href="#/galery">Galery</a>
                                         </li>
                                         <li>
-                                            <a href="#">About</a>
+                                            <a href="#/about">About</a>
                                         </li>
                                     </ul>
-
                             </li>
                             <li>
                                 <a href="#/galery">Galery</a>
@@ -43,14 +59,25 @@
                                 <a href="#/about">About</a>
                             </li>
                             <li>
-                            {{#if res}}
-                            <a href="#/logout">{{res.username}}</a>
+                        </ul>
+                        {{/ifEq}}
+                        <ul class="nav col col-lg-2 justify-content-end">
+                            {{#if res}}  
+                            <li >
+                                <a href="#/logout">{{res.username}}</a>
+                            {{#ifEq res.role "admin"}}
+                            {{else}}
+                            <a class="cart" href="#">
+                                <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                            </a>
+                            {{/ifEq}}
                             <ul>
                                 <li>
                                     <a href="/api/logout">logout</a>
                                 </li>
                             </ul>
                             {{else}}
+                            <li>
                             <a href="#/signup">Sing up</a>
                             <ul>
                                 <li>
@@ -61,7 +88,9 @@
                                 </li>
                             </ul>
                             {{/if}}
+                            </li>
                         </ul>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -78,12 +107,9 @@
                             08:00 - 22:00 <br/>
                             every day <br/>
                         </p>
-                        <button class="btn">Reservation here</button>
+                        {{!--<button class="btn">Reservation here</button>--}}
                     </div>
                 </div>
             {{/if}}
         </div>
     </header>
-
-
-

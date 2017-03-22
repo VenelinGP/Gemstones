@@ -28,17 +28,19 @@
     "express": "^4.15.0",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.1",
+    "mongoose": "^4.8.5",
+    "passport": "^0.3.2",
+    "passport-http-bearer": "^1.0.1",
+    "passport-local": "^1.0.0",
+    "toastr": "^2.1.2"
+  },
+  "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
     "gulp-nodemon": "^2.2.1",
     "gulp-sync": "^0.1.4",
-    "mongoose": "^4.8.5",
-    "passport": "^0.3.2",
-    "passport-http-bearer": "^1.0.1",
-    "passport-local": "^1.0.0"
-  },
-  "devDependencies": {
+    "gulp-clean-css": "^3.0.4",
     "nodemon": "^1.11.0"
   }
 }
