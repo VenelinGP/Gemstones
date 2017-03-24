@@ -98,13 +98,6 @@ h3 {
     background-color: #fbfbf8;
 }
 
-.text-wrap {
-    /*960px*/
-    width: 68.57%;
-    padding-left: 15.7%;
-    padding-right: 15.7%;
-}
-
 .top-product,
 .footer-info,
 .footer-logo,
@@ -112,7 +105,7 @@ h3 {
 .nav,
 #nav,
 #nav-content,
-#content,
+#content-wrap,
 #site-wrap,
 #header,
 #footer {
@@ -126,7 +119,7 @@ h3 {
 .nav:after,
 #nav:after,
 #nav-content:after,
-#content:after,
+#content-wrap:after,
 #site-wrap:after,
 #header:after,
 #footer:after {
@@ -316,6 +309,7 @@ background-color: transparent;
     border-radius: 20px;
     border: none;
     height: 35px;
+    width: 200px;
     -webkit-box-shadow: inset 2px 2px 5px 1px rgba(0, 0, 0, 0.41);
     -moz-box-shadow: inset 2px 2px 5px 1px rgba(0, 0, 0, 0.41);
     box-shadow: inset 2px 2px 5px 1px rgba(0, 0, 0, 0.41), 1px 1px 0 rgba(255, 255, 255, 1);
@@ -374,14 +368,14 @@ background-color: transparent;
 
 /*content ng view*/
 
-#content {
+#content-wrap {
     /*padding: 5%;*/
     max-width: 1400px;
     background-color: #f0eed5;
 }
 
 
-/*#content .border-bottom-effect{*/
+/*#content-wrap .border-bottom-effect{*/
 
 
 /*border-bottom: 1px solid black;*/
@@ -789,6 +783,11 @@ button[type="submit"]:hover {
 /*-----start-responsive-design------*/
 
 @media (max-width:1440px) {
+    .text-wrap {
+        /*960px*/
+        padding-left: 15.7%;
+        padding-right: 15.7%;
+    }
     .message.warning {
         margin: 11% auto 0;
         width: 30%;
@@ -799,6 +798,11 @@ button[type="submit"]:hover {
 }
 
 @media (max-width:1366px) {
+    .text-wrap {
+        /*960px*/
+        padding-left: 15.7%;
+        padding-right: 15.7%;
+    }
     .message.warning {
         margin: 7% auto 0;
         width: 35%;
@@ -810,6 +814,11 @@ button[type="submit"]:hover {
 }
 
 @media (max-width:1280px) {
+    .text-wrap {
+        /*960px*/
+        padding-left: 15.7%;
+        padding-right: 15.7%;
+    }
     .message.warning {
         margin: 7% auto 0;
         width: 33%;
@@ -820,6 +829,11 @@ button[type="submit"]:hover {
 }
 
 @media (max-width:1024px) {
+    .text-wrap {
+        /*960px*/
+        padding-left: 15.7%;
+        padding-right: 15.7%;
+    }
     .message.warning {
         margin: 12% auto 0;
         width: 47%;
@@ -830,6 +844,12 @@ button[type="submit"]:hover {
 }
 
 @media (max-width:768px) {
+    .text-wrap {
+        /*960px*/
+        width: 68.57%;
+        padding-left: 15.7%;
+        padding-right: 15.7%;
+    }
     .message.warning {
         margin: 13% auto 0;
         width: 65%;
@@ -841,6 +861,12 @@ button[type="submit"]:hover {
 }
 
 @media (max-width:640px) {
+    .text-wrap {
+        /*960px*/
+        width: 68.57%;
+        padding-left: 15.7%;
+        padding-right: 15.7%;
+    }
     .message.warning {
         margin: 13% auto 0;
         width: 67%;
@@ -852,6 +878,12 @@ button[type="submit"]:hover {
 }
 
 @media (max-width:480px) {
+    .text-wrap {
+        /*960px*/
+        width: 68.57%;
+        padding-left: 15.7%;
+        padding-right: 15.7%;
+    }
     .message.warning {
         margin: 15% auto 0;
         width: 90%;
@@ -863,6 +895,11 @@ button[type="submit"]:hover {
 }
 
 @media (max-width:320px) {
+    .text-wrap {
+        /*960px*/
+        padding-left: 15.7%;
+        padding-right: 15.7%;
+    }
     .message.warning {
         margin: 8% auto 0;
         width: 90%;

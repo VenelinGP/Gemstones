@@ -10,17 +10,17 @@ const notifier = window.notifier;
         loginUser(userToLogin) {
             const url = window.baseUrl + "login";
             // loader.show();
-            // $("#loader .loader-title").html("Creating Book");
+            // $("#loader .loader-title").html("Creating");
 
             Promise.all([http.postJSON(url, userToLogin), templates.getPage("nav")])
                 .then(([resp, templateFunc]) => {
 
                     if (resp.result.success) {
                         res = resp.result;
-                        console.log(resp.result);
                         let html = templateFunc({
                             res
                         });
+
                         $("#nav-wrap").html(html);
                         notifier.success(`Welcome ${userToLogin.username}!`);
                     } else {
@@ -29,12 +29,21 @@ const notifier = window.notifier;
                     }
                     // loader.hide();
                     modalLogin.hide();
+                    $("#content-wrap").addClass(res.role);
+                })
+                .then(() => {
+                    console.log($("#content-wrap").hasClass("admin"));
+                    if ($("#content-wrap").hasClass("admin")) {
+                        content.init("admin-content");
+                    }
+                    if ($("#content-wrap").hasClass("standart")) {
+                        content.init("user-content");
+                    }
                 })
                 .catch((err) => {
                     // loader.hide();
-                    // console.log(`${userToLogin.username} not created! ${err}`);
                     notifier.error(`${userToLogin.username} not created! ${err}`);
-                    console.log(JSON.stringify(err)); // eslint-disable-line no-console
+                    console.log(JSON.stringify(err));
                 });
         },
         registerUser(userToRegister) {
@@ -123,7 +132,11 @@ const notifier = window.notifier;
                         });
                 });
             })
-            .then(footer.init());
+            .then(footer.init())
+            .then(() => {
+                content.init("no-user-content");
+            });
+
         Handlebars.registerHelper("ifEq", (v1, v2, options) => {
             if (v1 === v2) {
                 return options.fn(this);

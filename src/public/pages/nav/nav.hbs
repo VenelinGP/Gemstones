@@ -14,82 +14,82 @@
             <nav id="nav" class="effect">
                 <div class="nav-color">
                     <div class="nav-opacity">
-                        <div class="row">
-                        <a id="logo" class="col" href="#/">
-                            <img src="public/img/Logo.png">
-                        </a>
-                        {{#ifEq res.role "admin"}}
-                        <ul class="nav col-12 col-md-auto justify-content-end">
-                            <li>
-                                <a href="#/products" title="home">Products</a>
-                            </li>
-                            <li>
-                                <a href="#/users">Users</a>
-                            </li>
-                            <li>
-                                <a href="#/new">New</a>
-                            </li>
-                            <li>
-                                <a href="#/history">History</a>
-                            </li>
-                        </ul>
-                        {{else}}
-                        <ul class="nav col-12 col-md-auto justify-content-end">
-                            <li>
-                                <a href="#/" title="home">Home</a>
-                            </li>
-                            <li>
-                            <a href="#/menu">Menu</a>
+                        <div id="info" class="row">
+                            <a id="logo" class="col" href="#/">
+                                <img src="public/img/Logo.png">
+                            </a>
+                            {{#ifEq res.role "admin"}}
+                            <ul class="tabs nav col-12 col-md-auto justify-content-end">
+                                <li class="nav-item">
+                                    <a class="active" data-toggle="tab" href="#products" role="tab">Products</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="" data-toggle="tab" href="#users" role="tab">Users</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="" data-toggle="tab" href="#new" role="tab">New</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="" data-toggle="tab" href="#history" role="tab">History</a>
+                                </li>
+                            </ul>
+                            {{else}}
+                            <ul class="nav col-12 col-md-auto justify-content-end">
+                                <li>
+                                    <a href="#/" title="home">Home</a>
+                                </li>
+                                <li>
+                                <a href="#/menu">Menu</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#/">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="#/galery">Galery</a>
+                                        </li>
+                                        <li>
+                                            <a href="#/about">About</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#/galery">Galery</a>
+                                </li>
+                                <li>
+                                    <a href="#/about">About</a>
+                                </li>
+                                <li>
+                            </ul>
+                            {{/ifEq}}
+                            <ul class="nav col col-lg-2 justify-content-end">
+                                {{#if res}}  
+                                <li >
+                                    <a href="#/logout">{{res.username}}</a>
+                                {{#ifEq res.role "admin"}}
+                                {{else}}
+                                <a class="cart" href="#">
+                                    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                                </a>
+                                {{/ifEq}}
                                 <ul>
                                     <li>
-                                        <a href="#/">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="#/galery">Galery</a>
-                                    </li>
-                                    <li>
-                                        <a href="#/about">About</a>
+                                        <a href="/api/logout">logout</a>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                <a href="#/galery">Galery</a>
-                            </li>
-                            <li>
-                                <a href="#/about">About</a>
-                            </li>
-                            <li>
-                        </ul>
-                        {{/ifEq}}
-                        <ul class="nav col col-lg-2 justify-content-end">
-                            {{#if res}}  
-                            <li >
-                                <a href="#/logout">{{res.username}}</a>
-                            {{#ifEq res.role "admin"}}
-                            {{else}}
-                            <a class="cart" href="#">
-                                <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-                            </a>
-                            {{/ifEq}}
-                            <ul>
+                                {{else}}
                                 <li>
-                                    <a href="/api/logout">logout</a>
+                                <a href="#/signup">Sing up</a>
+                                <ul>
+                                    <li>
+                                        <a class="btn-login-modal" href="#" data-toggle="modal" data-target=".modal-login">login</a>
+                                    </li>
+                                    <li>
+                                        <a id="btn-register-modal" href="#" data-toggle="modal" data-target=".modal-register">register</a>
+                                    </li>
+                                </ul>
+                                {{/if}}
                                 </li>
                             </ul>
-                            {{else}}
-                            <li>
-                            <a href="#/signup">Sing up</a>
-                            <ul>
-                                <li>
-                                    <a class="btn-login-modal" href="#" data-toggle="modal" data-target=".modal-login">login</a>
-                                </li>
-                                <li>
-                                    <a id="btn-register-modal" href="#" data-toggle="modal" data-target=".modal-register">register</a>
-                                </li>
-                            </ul>
-                            {{/if}}
-                            </li>
-                        </ul>
                         </div>
                     </div>
                 </div>

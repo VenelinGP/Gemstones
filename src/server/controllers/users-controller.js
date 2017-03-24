@@ -74,7 +74,7 @@ module.exports = (data) => {
             console.log(newUserData);
             newUserData.salt = encryption.generateSalt();
             newUserData.hashPass = encryption.generateHashedPassword(newUserData.salt, newUserData.password);
-            newUserData.roles = ["standard"];
+            newUserData.roles = ["standart"];
             console.log(newUserData);
             User.create(newUserData, (err, user) => {
                 if (err) {
@@ -127,13 +127,6 @@ module.exports = (data) => {
             //         return res.status(401).redirect("/api/unauthorized");
             //     }
             // }
-            // User.find({}).exec((err, collection) => {
-            //     if (err) {
-            //         return res.send({
-            //             error: "Username is already taken"
-            //         });
-            //         // console.log("Users could not be loaded: " + err);
-            //     }
             return res.send({ collection });
         }
     };
