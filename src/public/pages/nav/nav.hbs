@@ -15,9 +15,14 @@
                 <div class="nav-color">
                     <div class="nav-opacity">
                         <div id="info" class="row">
-                            <a id="logo" class="col" href="#/">
-                                <img src="public/img/Logo.png">
+                            <a id="logo" class="col" href="#">
+                                <div>
+                                    <img class="fliped" src="public/img/logo.png">
+                                    <img src="public/img/logo.png">
+                                </div>
+                                <div id="logo-name">Selena store</div>
                             </a>
+                            
                             {{#ifEq res.role "admin"}}
                             <ul class="tabs nav col-12 col-md-auto justify-content-end">
                                 <li>
