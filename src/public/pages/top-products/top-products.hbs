@@ -1,0 +1,16 @@
+    <h2>Top products</h2>
+    <ul>
+         {{#each res}}
+        <li>
+            <a>
+                <div class="image">
+                    <img src={{image}}>
+                </div>
+            </a>
+            <article class="top-product">
+                <a><h3>{{name}}</h3></a>
+                <p>{{description}}</p>
+            </article>
+        </li>
+        {{/each}}
+    </ul>

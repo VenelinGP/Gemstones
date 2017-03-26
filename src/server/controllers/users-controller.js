@@ -127,7 +127,15 @@ module.exports = (data) => {
             //         return res.status(401).redirect("/api/unauthorized");
             //     }
             // }
-            return res.send({ collection });
+            User.find({}).exec((err, collection) => {
+                if (err) {
+                    return res.send({
+                        error: err
+                    });
+                    // console.log("Users could not be loaded: " + err);
+                }
+                return res.send({ collection });
+            });
         }
     };
 };

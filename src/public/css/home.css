@@ -1,4 +1,4 @@
-.home-wrap h2 {
+#top-products h2 {
     padding-bottom: 20px;
     font-family: League Gothic, Arial, serif;
     font-size: 2.2rem;
@@ -8,7 +8,7 @@
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
 }
 
-.home-wrap h3 {
+#top-products h3 {
     font-family: League Gothic, Arial, serif;
     font-size: 2.2rem;
     font-weight: normal;
@@ -16,7 +16,7 @@
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
 }
 
-.home-wrap p {
+#top-products p {
     font-family: Georgia, Verdana, sans-serif;
     font-size: 1.2rem;
     font-style: italic;

@@ -1,5 +1,4 @@
 /* globals $ */
-
 const templates = window.templates;
 
 ((scope) => {
@@ -17,14 +16,6 @@ const templates = window.templates;
                     $(footerSelector).remove();
                     $("#footer-wrap").append(html);
                 });
-        },
-        show() {
-            $(footerSelector).removeClass("hidden");
-            return this;
-        },
-        hide() {
-            $(footerSelector).addClass("hidden");
-            return this;
         },
     };
 })(window);

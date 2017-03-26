@@ -25,7 +25,7 @@ passport.deserializeUser(function(id, done) {
 });
 
 module.exports = (app) => {
-    console.log("Passport index");
+    console.log("Passport");
     app.use(passport.initialize());
     app.use(passport.session());
 };

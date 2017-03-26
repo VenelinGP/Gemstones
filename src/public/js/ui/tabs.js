@@ -17,14 +17,6 @@
                     this.tabs();
                 });
         },
-        // show() {
-        //     $(contentSelector).removeClass("hidden");
-        //     return this;
-        // },
-        // hide() {
-        //     $(contentSelector).addClass("hidden");
-        //     return this;
-        // },
         tabs() {
             $tabs = $("#info .tabs");
             let $items = $tabs.find(">li>a");

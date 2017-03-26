@@ -338,6 +338,7 @@ background-color: transparent;
     border-radius: 20px;
     border: none;
     height: 35px;
+    font-size: 1.4rem;
     -webkit-box-shadow: inset 2px 2px 5px 1px rgba(0, 0, 0, 0.41);
     -moz-box-shadow: inset 2px 2px 5px 1px rgba(0, 0, 0, 0.41);
     box-shadow: inset 2px 2px 5px 1px rgba(0, 0, 0, 0.41), 1px 1px 0 rgba(255, 255, 255, 1);
@@ -394,7 +395,7 @@ button:focus {
 
 .btn {
     position: relative;
-    top: -1px;
+    top: -2px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 1);
     background: #7ba35c;
     color: #ffffff;
@@ -422,14 +423,41 @@ button:focus {
     background-color: #f0eed5;
 }
 
+#content-wrap .pane,
+#form-add-gemstone {
+    background-color: #f0eed5;
+    padding: 10px;
+}
 
-/*#content-wrap .border-bottom-effect{*/
+#content-wrap label {
+    margin-right: 25px;
+}
 
+#content-wrap input {
+    font-size: 1.8rem;
+    background-color: white;
+    border: 0;
+    border-radius: 4px;
+    width: 70%;
+}
 
-/*border-bottom: 1px solid black;*/
+#content-wrap textarea {
+    margin: 0px;
+    border: 0;
+    height: 60px;
+    width: 280px;
+    font-size: 16px;
+}
 
+#content-wrap .desc {
+    position: relative;
+    top: -26px;
+}
 
-/*}*/
+#content-wrap .submit {
+    display: inline-block;
+    padding-left: 10px;
+}
 
 .login span {
     margin-bottom: 10px;
@@ -581,7 +609,7 @@ button:focus {
     transform: skew(8deg) rotate(3deg);
 }
 
-.fliped {
+.mirror {
     display: block;
     position: relative;
     top: 2px;
@@ -720,12 +748,12 @@ button:focus {
     margin: 0 23px;
 }
 
-form {
+.modal form {
     padding: 3em 2em;
     background: #F2F2F2;
 }
 
-form li {
+.modal form li {
     border: 2px ridge rgba(187, 185, 189, 0.11);
     border-radius: 0.3em;
     -webkit-border-radius: 0.3em;
@@ -736,7 +764,7 @@ form li {
     background: #F0EEF0;
 }
 
-.icon {
+.modal .icon {
     background: url(../img/icons.png) no-repeat 0px 0px;
     height: 30px;
     width: 30px;
@@ -745,16 +773,16 @@ form li {
     margin: 12px 9px 9px 0px;
 }
 
-.user {
+.modal .user {
     background: url(../img/icons.png) no-repeat 7px 1px;
 }
 
-.lock {
+.modal .lock {
     background: url(../img/icons.png) no-repeat -26px 1px;
 }
 
-input[type="text"],
-input[type="password"] {
+.modal input[type="text"],
+.modal input[type="password"] {
     font-family: "Georgia", sans-serif;
     width: 80%;
     padding: 0.5em 2em 0.5em 1em;
@@ -765,12 +793,12 @@ input[type="password"] {
     border: none;
 }
 
-input[type="text"]:hover,
-input[type="password"]:hover {
+.modal input[type="text"]:hover,
+.modal input[type="password"]:hover {
     color: #5f460b;
 }
 
-.submit h4 a {
+.modal .submit h4 a {
     float: left;
     font-size: 16px;
     color: #999;
@@ -780,18 +808,18 @@ input[type="password"]:hover {
     margin-top: 8px;
 }
 
-.submit h4 a:hover {
+.modal .submit h4 a:hover {
     color: rgba(153, 146, 129, .8);
 }
 
 
 /*************************/
 
-.submit {
+.modal .submit {
     padding-top: 3em;
 }
 
-button[type="submit"] {
+.modal button[type="submit"] {
     float: left;
     color: #fff;
     cursor: pointer;
@@ -816,7 +844,7 @@ button[type="submit"] {
     height: 35px;
 }
 
-button[type="submit"]:hover {
+.modal button[type="submit"]:hover {
     background: #fff;
     color: var(--blue-color);
     border: 2px solid var(--blue-color);
@@ -825,7 +853,7 @@ button[type="submit"]:hover {
 
 /*----*/
 
-.modal-close {
+.modal .modal-close {
     background: url('../img/into.png') no-repeat 0px 3px;
     cursor: pointer;
     height: 30px;

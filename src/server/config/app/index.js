@@ -1,4 +1,4 @@
-const config = require("../config"),
+const config = require("../config").development,
     express = require("express");
 
 const app = express();

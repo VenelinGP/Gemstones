@@ -54,6 +54,7 @@ gulp.task("copy:all", () => {
     return gulp
         .src([
             "./src/**/*.html",
+            "./src/**/*.ico",
             "./src/**/*.js",
             "./src/**/*.hbs",
             "./src/**/fonts/**",

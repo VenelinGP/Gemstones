@@ -8,11 +8,9 @@ module.exports = (app, config) => {
     app.engine(".hbs", exphbs({ extname: ".hbs" }));
     app.set("view engine", ".hbs");
 
-    // app.engine("handlebars", exphbs({ defaultLayouts: "main" }));
-    // app.set("view engine", "handlebars");
     app.set("views", "build/views/");
 
-    let secretKey = process.env["SECRET_KEY"] || config.development.secret;
+    let secretKey = process.env["SECRET_KEY"] || config.secret;
 
     app.use(cookieParser());
     app.use(bodyParser.json());
@@ -26,9 +24,8 @@ module.exports = (app, config) => {
 
 
 
-    // app.get("/", (req, res) => res.render("index"));
     app.get("/", (req, res) => res.render("index", { layout: false }));
 
-    app.use("/libs", express.static(config.development.rootPath + "/node_modules"));
-    app.use("/public", express.static(config.development.rootPath + "/public"));
+    // app.use("/libs", express.static(config.development.rootPath + "/node_modules"));
+    app.use("/public", express.static(config.rootPath + "/public"));
 };

@@ -2,6 +2,7 @@
 const modals = window.modals;
 const footer = window.footer;
 const notifier = window.notifier;
+const admin = window.admin;
 
 ((scope) => {
     const modalLogin = modals.get("login");
@@ -35,6 +36,7 @@ const notifier = window.notifier;
                     console.log($("#content-wrap").hasClass("admin"));
                     if ($("#content-wrap").hasClass("admin")) {
                         content.init("admin-content");
+                        admin.init();
                     }
                     if ($("#content-wrap").hasClass("standart")) {
                         content.init("user-content");
@@ -69,9 +71,8 @@ const notifier = window.notifier;
                 })
                 .catch((err) => {
                     // loader.hide();
-                    // console.log(`${userToLogin.username} not created! ${err}`);
                     notifier.error(`${userToLogin.username} not created! ${err}`);
-                    console.log(JSON.stringify(err)); // eslint-disable-line no-console
+                    console.log(JSON.stringify(err));
                 });
         },
         loginFormEvents() {
@@ -110,7 +111,6 @@ const notifier = window.notifier;
         Promise
             .all([http.get(url), templates.getPage("nav")])
             .then(([resp, templateFunc]) => {
-
                 if (resp.result === "unauthorized!") {
                     res = false;
                 } else {

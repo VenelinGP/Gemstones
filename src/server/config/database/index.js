@@ -4,7 +4,7 @@ const models = require("../../models");
 mongoose.Promise = global.Promise;
 module.exports = (config) => {
     console.log("Database");
-    mongoose.connect(config.development.db);
+    mongoose.connect(config.db);
     let db = mongoose.connection;
 
     db.once("open", (err) => {

@@ -3,18 +3,25 @@ let Gemstone = require("../models/").Gemstone;
 module.exports = (data) => {
     return {
         getGemstones(req, res) {
-            return res.send({
-                result: collection
-                    .map((gemstone) => {
+            Gemstone.find({}).exec((err, collection) => {
+                if (err) {
+                    return res.send({
+                        error: err
+                    });
+                }
+                console.log("Users could not be loaded: " + err);
+                return res.send({
+                    result: collection.map((gemstone) => {
                         return {
                             id: gemstone._id,
                             name: gemstone.name,
-                            description: gemstone.description,
+                            description: gemstone.description.substr(0, 37) + "...",
                             image: gemstone.image,
                             price: gemstone.price,
                             quantity: gemstone.quantity
                         };
                     })
+                });
             });
         },
         postGemstone(req, res) {
@@ -113,7 +120,16 @@ module.exports = (data) => {
             //         return res.status(401).redirect("/api/unauthorized");
             //     }
             // }
-            return res.send({ collection });
+
+            Gemstone.find({}).exec((err, collection) => {
+                if (err) {
+                    return res.send({
+                        error: err
+                    });
+                    // console.log("Users could not be loaded: " + err);
+                }
+                return res.send({ collection });
+            });
         }
     };
 };

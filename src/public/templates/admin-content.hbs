@@ -1,7 +1,41 @@
 <div id="info" class="card hidden">
         <div class="main tab-content">
             <div class="pane active" id="products" role="tabpanel">
-                <h6 class="h1">Products</h6>
+                <div class="row">
+                    <div class="col-sm">
+                        <form id="form-add-gemstone">
+                            <div class="form-group">
+                                <label for="name" class="col-2" data-icon="u">Name</label>
+                                <input id="tb-name" class="col-auto" type="text" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="description" class="col-2 desc" data-icon="u">Description</label>
+                                <textarea id="tb-description" rows="4" class="col-auto" name="description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="image" class="col-2" data-icon="u">Image</label>
+                                <input id="tb-image" class="col-auto" type="text" name="image">
+                            </div>
+                            <div class="form-group">
+                                <label for="price" class="col-2" data-icon="u">Price</label>
+                                <input id="tb-price" class="col-auto" type="text" name="price">
+                            </div>
+                            <div class="form-group">
+                                <label for="quantity" class="col-2" data-icon="u">Quantity</label>
+                                <input id="tb-quantity" class="col-6" type="text" name="quantity">
+                                <div class="submit">
+                                    <button id="btn-add-gemstone" class="btn" type="submit">Add</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm">
+                        <article id="top-products" class="product-menu">
+                        </article>
+                    </div>
+                    <div class="col-sm">
+                    </div>
+                </div>
             </div>
             <div class="pane" id="users" role="tabpanel">
                 <h6 class="h1">Users</h6>
