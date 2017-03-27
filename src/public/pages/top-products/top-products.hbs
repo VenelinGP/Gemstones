@@ -1,16 +1,18 @@
+<article>
     <h2>Top products</h2>
     <ul>
          {{#each res}}
         <li>
-            <a>
+            <div class="left">
                 <div class="image">
                     <img src={{image}}>
                 </div>
-            </a>
-            <article class="top-product">
-                <a><h3>{{name}}</h3></a>
+            </div>
+            <div class="admin">
+                <h3>{{name}}</h3>
                 <p>{{description}}</p>
-            </article>
+            </div>
         </li>
         {{/each}}
     </ul>
+</article>

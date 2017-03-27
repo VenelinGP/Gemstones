@@ -12,6 +12,7 @@ module.exports = (app, pageController) => {
         .get("/unauthorized", pageController.auth.unauthorized)
         .post("/gemstone", pageController.gemstones.createGemstone)
         .get("/gemstone", pageController.gemstones.getGemstones)
+        .get("/allGemstones", pageController.gemstones.getAllGemstones)
 
     .get("/profile", pageController.users.profile)
         .get("/all", pageController.users.getAllUsers);

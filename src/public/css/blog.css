@@ -1,0 +1,159 @@
+.blog{
+    font-size: 1.4rem;
+    height: 1450px;
+}
+.blog h2{
+    padding-bottom: 15px;
+    font-family: League Gothic, Arial, serif;
+    font-size: 2.2rem;
+    font-weight: normal;
+    color: #cac6a1;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+}
+
+.blog h1{
+    padding-bottom: 15px;
+    font-family: League Gothic, Arial, serif;
+    font-size: 3rem;
+    font-weight: normal;
+    color: #cac6a1;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+}
+
+.blog .blog-post{
+    margin-bottom: 40px;
+}
+.blog .right-side ul li{
+    margin-left: 10px;
+    line-height: 25px;
+}
+
+.blog .left-side{
+    margin-top: 6.25%;
+    float: left;
+    width: 60%;
+}
+
+.blog .right-side{
+    margin-top: 6.25%;
+    width: 35%;
+    float: right;
+}
+
+.blog .blog-post .blog-list{
+    /*height: 218px;*/
+    padding: 15px;
+    border-radius: 5px;
+    background: #ffffff;
+}
+
+.blog-list li a{
+    text-shadow: 1px 1px 1px #fff;
+    font-size: 1.2rem;
+    color: #442917;
+}
+
+.blog-list li a:hover{
+    text-shadow: 1px 1px 1px #fff;
+    font-size: 1.2rem;
+    color: #cac6a1;
+}
+
+.blog-list ul li:before{
+    content: '>';
+    font-size: .5rem;
+    font-weight: bolder;
+}
+
+.user-post{
+    margin-bottom: 45px;
+}
+
+.user-post p{
+    font-family: Georgia, Verdana, sans-serif;
+    font-size: 1.2rem;
+    font-style: normal;
+    color: #716851;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+}
+
+.user-post .image{
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    width: 45%;
+    height: 225px;
+
+}
+
+.user-post .image img{
+    margin: 5px;
+    width: 95.35%;
+    height: 215px;
+    border: 1px solid #e5e2c6;
+    -webkit-box-shadow: inset 5px 5px 5px 0px rgba(0,0,0,0.43);
+    -moz-box-shadow: inset 5px 5px 5px 0px rgba(0,0,0,0.43);
+    box-shadow: inset 5px 5px 5px 0px rgba(0,0,0,0.43);
+
+}
+
+.blog-comments .left-side{
+    width: 13%;
+}
+.blog-comments .right-side{
+    width: 85%;
+}
+
+.blog-list p{
+    margin-left: 28px;
+    font-size: 1.2rem;
+    color: #716851;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+.blog-comments .rest-post .image p{
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #92907c;
+    text-shadow: 1px 1px 1px #fff;
+    text-align: center;
+}
+
+.blog-list h3{
+    margin-left: 28px;
+    font-family: League Gothic, Arial, serif;
+    font-size: 2.4rem;
+    color: #442917;
+    text-shadow: 1px 1px 1px #fff;
+    padding-bottom: 15px;
+}
+
+.blog .left-side textarea{
+    width: 100%;
+    height: 100px;
+}
+
+.blog .blog-comments ul li{
+    display: inline-block;
+}
+
+.blog .blog-comments ul li .btn{
+    margin-left: 80%;
+}
+
+.blog .blog-comments ul li ul{
+    margin-left: 80px;
+}
+
+.blog .blog-comments ul li ul .btn {
+    margin-left: 77%;
+}
+
+.blog .blog-comments ul li ul .image{
+    width: 15%;
+}
+.blog .blog-comments ul li ul .right-side{
+    width: 83%;
+}

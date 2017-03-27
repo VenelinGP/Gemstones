@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-sm">
+        <article>
+        <h2>Products</h2>
+        <ul>
+        {{#each res}}
+            <li>
+                <div class="left">
+                    <div class="image">
+                        <img src={{image}}>
+                    </div>
+                    <div id="price-image">
+                        <img src="/public/img/price-image.png">
+                    </div>
+                    <div id="price">${{price}}</div>
+                </div>
+                <div class="users">
+                    <h3>{{name}}</h3>
+                    <p>{{description}}</p>
+                </div>
+            </li>
+        {{#mod3 @index}}
+        </ul>
+        </article>
+    </div>
+    <div class="col-sm">
+        <article>
+        <h2>Products</h2>
+        <ul>
+        {{/mod3}}
+        {{/each}}
+        </ul>
+        </article>
+    </div>
+</div>

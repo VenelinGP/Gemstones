@@ -10,15 +10,23 @@ module.exports = (data) => {
             if (!req.user) {
                 return res.status(200).send({ result: "You are not logged!" });
             }
-            return res.send({
-                result: collection
-                    .map((user) => {
-                        return {
-                            id: user._id,
-                            username: user.username,
-                            role: user.roles[0]
-                        };
-                    })
+            User.find({}).exec((err, collection) => {
+                if (err) {
+                    return res.send({
+                        error: err
+                    });
+                    // console.log("Users could not be loaded: " + err);
+                }
+                return res.send({
+                    result: collection
+                        .map((user) => {
+                            return {
+                                id: user._id,
+                                username: user.username,
+                                role: user.roles[0]
+                            };
+                        })
+                });
             });
         },
         profile(req, res) {

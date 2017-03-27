@@ -1,4 +1,4 @@
-.menu h2{
+.menu h2 {
     padding-bottom: 20px;
     font-family: League Gothic, Arial, serif;
     font-size: 2.2rem;
@@ -8,7 +8,7 @@
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
 }
 
-.menu h3{
+.menu h3 {
     font-family: League Gothic, Arial, serif;
     font-size: 2.2rem;
     font-weight: normal;
@@ -16,7 +16,7 @@
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
 }
 
-.menu p{
+.menu p {
     font-family: Georgia, Verdana, sans-serif;
     font-size: 1.2rem;
     font-style: italic;
@@ -24,45 +24,46 @@
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
 }
 
-.image{
-    width: 26.67%;
+.menu .image {
+    width: 100px;
     height: 66px;
     border: 1px solid #e5e2c6;
     background: #fff;
 }
 
-.image img{
+.menu .image img {
     margin: 5px;
-    width: 83.35%;
+    width: 89%;
     height: 55px;
     border: 1px solid #e5e2c6;
-    -webkit-box-shadow: inset 5px 5px 5px 0px rgba(0,0,0,0.43);
-    -moz-box-shadow: inset 5px 5px 5px 0px rgba(0,0,0,0.43);
-    box-shadow: inset 5px 5px 5px 0px rgba(0,0,0,0.43);
+    -webkit-box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.43);
+    -moz-box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.43);
+    box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.43);
 }
 
-
-.menu{
+.menu {
     padding-top: 73px;
     display: block;
     height: 780px;
-
 }
-.menu .left{
+
+.menu .left {
     width: 30%;
     float: left;
 }
-.menu .center{
+
+.menu .center {
     margin-left: 5%;
     width: 30%;
     float: right;
 }
-.menu .right{
+
+.menu .right {
     width: 30%;
     float: right;
 }
 
-.menu .price{
+.menu .price {
     width: 36px;
     height: 37px;
     position: relative;

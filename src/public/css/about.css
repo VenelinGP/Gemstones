@@ -1,0 +1,52 @@
+.about{
+    font-size: 1.4rem;
+}
+
+.about-info{
+    /*font-size: 14px;*/
+    font-family: Georgia, sans-serif;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 1);
+    margin-top: 60px;
+    margin-left: 0.62%;
+    float: left;
+}
+
+.about-info div{
+    margin-bottom: 40px;
+}
+
+.about-info h2{
+    padding-bottom: 15px;
+    font-size: 22px;
+    font-family: League Gothic, Arial, serif;
+    font-weight: normal;
+    color: #cac6a1;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+}
+
+.about-info span{
+    font-style: normal;
+    color: #442917;
+}
+
+.about-info div:nth-of-type(1n+2) span{
+    color: #716851;
+}
+
+.about-info strong{
+    font-style: normal;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #442917;
+}
+
+.about-google-maps{
+    position: relative;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 62.5%;
+    height: 410px;
+    float: right;
+;
+}

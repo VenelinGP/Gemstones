@@ -9,18 +9,19 @@ module.exports = (data) => {
                         error: err
                     });
                 }
-                console.log("Users could not be loaded: " + err);
                 return res.send({
-                    result: collection.map((gemstone) => {
-                        return {
-                            id: gemstone._id,
-                            name: gemstone.name,
-                            description: gemstone.description.substr(0, 37) + "...",
-                            image: gemstone.image,
-                            price: gemstone.price,
-                            quantity: gemstone.quantity
-                        };
-                    })
+                    result: collection
+                        .map((gemstone) => {
+                            return {
+                                id: gemstone._id,
+                                name: gemstone.name,
+                                description: gemstone.description.substr(0, 37) + "...",
+                                image: gemstone.image,
+                                price: gemstone.price,
+                                quantity: gemstone.quantity
+                            };
+                        })
+                        .slice(0, 3)
                 });
             });
         },
@@ -126,9 +127,20 @@ module.exports = (data) => {
                     return res.send({
                         error: err
                     });
-                    // console.log("Users could not be loaded: " + err);
                 }
-                return res.send({ collection });
+                return res.send({
+                    result: collection
+                        .map((gemstone) => {
+                            return {
+                                id: gemstone._id,
+                                name: gemstone.name,
+                                description: gemstone.description.substr(0, 37) + "...",
+                                image: gemstone.image,
+                                price: gemstone.price,
+                                quantity: gemstone.quantity
+                            };
+                        })
+                });
             });
         }
     };
