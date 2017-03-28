@@ -4,7 +4,6 @@ const gulpsync = require("gulp-sync")(gulp);
 const babel = require("gulp-babel");
 
 const cleanCSS = require("gulp-clean-css");
-// const stylus = require("gulp-stylus");
 
 const nodemon = require("gulp-nodemon");
 
@@ -40,13 +39,7 @@ gulp.task("minify-css", function() {
         .pipe(gulp.dest("./build"));
 });
 
-// gulp.task("compile:stylus", () => {
-//     return gulp.src("./src/**/*.styl")
-//         .pipe(stylus())
-//         .pipe(gulp.dest("./build"));
-// });
-
-// , "compile:stylus"
+gulp.task();
 
 gulp.task("compile", ["compile:js"]);
 

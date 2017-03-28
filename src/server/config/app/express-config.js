@@ -12,6 +12,8 @@ module.exports = (app, config) => {
 
     let secretKey = process.env["SECRET_KEY"] || config.secret;
 
+    app.use("/public", express.static(config.rootPath + "/public"));
+
     app.use(cookieParser());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,5 +29,5 @@ module.exports = (app, config) => {
     app.get("/", (req, res) => res.render("index", { layout: false }));
 
     // app.use("/libs", express.static(config.development.rootPath + "/node_modules"));
-    app.use("/public", express.static(config.rootPath + "/public"));
+
 };
