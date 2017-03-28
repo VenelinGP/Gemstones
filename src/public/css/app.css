@@ -1126,9 +1126,11 @@ button:focus {
         left: 73%;
         background: var(--blue-dropdown);
     }
-    #nav ul li ul {
-        position: relative;
-        width: 4%;
+    #nav li ul {
+        display: none;
+        position: absolute;
+        top: 13px;
+        left: -97px;
     }
     a#pull {
         display: block;
@@ -1161,5 +1163,9 @@ button:focus {
         overflow: hidden;
         padding: 5px;
         height: 75px;
+    }
+    #content-wrap .desc {
+        position: relative;
+        top: 0;
     }
 }

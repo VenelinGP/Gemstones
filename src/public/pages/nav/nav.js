@@ -109,13 +109,28 @@ const admin = window.admin;
         menuCollaps() {
             let pull = $("#pull");
             menu = $("nav ul");
-            console.log(menu);
+            link = $("#subMenu");
+            signUp = $("#signUp");
+            submenu = $("nav li ul");
+            console.log(link);
 
             menuHeight = menu.height();
 
             $(pull).on("click", function(ev) {
                 ev.preventDefault();
                 menu.slideToggle();
+                submenu.hide();
+            });
+
+            $(link).on("click", function(ev) {
+                ev.preventDefault();
+                signUp.next().hide();
+                link.next().slideToggle();
+            });
+            $(signUp).on("click", function(ev) {
+                ev.preventDefault();
+                link.next().hide();
+                signUp.next().slideToggle();
             });
 
             $(window).resize(function() {
